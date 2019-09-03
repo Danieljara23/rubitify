@@ -1,4 +1,4 @@
-import { FETCH_ARTISTS, FETCH_SONGS, FETCH_SONG } from "./types";
+import { FETCH_ARTISTS } from "./types";
 
 export const  fetchArtists = () =>  dispatch => {
     console.log("fetching...!")
