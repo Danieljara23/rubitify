@@ -1,4 +1,4 @@
-import { FETCH_SONGS, FETCH_ARTISTS, FETCH_ALBUMS, FETCH_SONG } from '../actions/types';
+import { FETCH_SONGS, FETCH_ARTISTS, FETCH_ARTIST, FETCH_ALBUMS, FETCH_SONG } from '../actions/types';
 
 const initialState = {
     data: [],
@@ -6,7 +6,8 @@ const initialState = {
     item: {},
     preview_url: "",
     songs: [],
-    artists: []
+    artists: [],
+    artist: 0
 }
 
 export default function( state = initialState, action){
@@ -15,6 +16,11 @@ export default function( state = initialState, action){
             return {
                 ...state,
                 data: action.payload
+            }
+        case FETCH_ARTIST:
+            return {
+                ...state,
+                artist: action.payload
             }
         case FETCH_ALBUMS:
             return {

@@ -1,4 +1,4 @@
-import { FETCH_ARTISTS } from "./types";
+import { FETCH_ARTISTS, FETCH_ARTIST } from "./types";
 
 export const  fetchArtists = () =>  dispatch => {
     console.log("fetching...!")
@@ -8,6 +8,11 @@ export const  fetchArtists = () =>  dispatch => {
         type: FETCH_ARTISTS,
         payload: artists
     }))
-
 }
 
+export const setArtist = (id) => dispatch => {
+    dispatch({
+        type: FETCH_ARTIST,
+        payload: id
+    })
+}
