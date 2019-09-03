@@ -1,0 +1,43 @@
+/* Artists Styling */
+.top-margin{
+    margin-top: 30px;
+}
+.albums-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.album-container {
+    margin-bottom: 10px;
+    margin-right: 10px;
+    position: relative;
+}
+.artist-image{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+.artist-name{
+    margin-top: 8px;
+    font-size: 14px;
+    color:white;
+    vertical-align: middle;
+}
+.name-container{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    top: 0;
+    background-color: #151515;
+    opacity: 0.8;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.album-container:hover .name-container{
+    transition: 0.2s opacity ease-in;
+    opacity: 0;
+    cursor: pointer;
+}

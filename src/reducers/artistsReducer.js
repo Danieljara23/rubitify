@@ -1,7 +1,7 @@
 import { FETCH_SONGS, FETCH_ARTISTS } from '../actions/types';
 
 const initialState = {
-    items: [],
+    data: [],
     item: {},
     artists: []
 }
@@ -11,7 +11,7 @@ export default function( state = initialState, action){
         case FETCH_ARTISTS:
             return{
                 ...state,
-                items: action.payload
+                data: action.payload
             }
         default:
             return state;

@@ -1,26 +1,39 @@
-import React, { useState, useEffect }from 'react'
-import { connect, useSelector, useDispatch } from 'react-redux';
-//import { fetchArtists } from '../../actions/artistsActions';
-import artistsReducer from '../../reducers/artistsReducer';
-import { FETCH_ARTISTS } from '../../actions/types';
+import React, { Component } from 'react'
+import { connect } from 'react-redux';
+import { fetchArtists } from '../../actions/artistsActions';
+import './styles.css'
 
-const Artists = ({ artistsReducer }) => {
-    //const [artists, setArtists] = useState([]);
-       
-    const artists = useSelector(state => state.artists)
-    const dispatch = useDispatch();
+class Artists extends Component {
 
-    useEffect(()=> {
-        dispatch({type: FETCH_ARTISTS})
-        console.log(artists)
-    }, [])
+    componentWillMount(){
+        this.props.fetchArtists();
+    }
+    render() {
+        const artistsItems = this.props.artists && this.props.artists.data && this.props.artists.data.map( artist => (
+            <div className="album-container" key={artist.id}>
+                <img src={artist.image} className="artist-image"/>
+                <div className="name-container">
+                    <h4 className="artist-name">{artist.name}</h4>
+                </div>
+            </div>
+        ));
+        
 
-    return (
-        <div>
-            <h2>Artists Works</h2>
-        </div>
-    )
+        return (
+            <>
+                <div className="container top-margin">
+                    <div className="row albums-container">
+                        {artistsItems}
+                    </div>
+                </div>
+            </>
+        )
+    }
 }
 
+const mapStateToProps = state => ({
+    artists: state.artists.data
+})
 
-export default connect(null, { artistsReducer })(Artists);
+
+export default connect(mapStateToProps, { fetchArtists })(Artists)
