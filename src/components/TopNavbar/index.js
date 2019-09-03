@@ -5,13 +5,14 @@ import Nav from 'react-bootstrap/Nav'
 import Home from '../Home/index';
 import Artists from '../Artists/index';
 import Albums from '../Albums/index';
+import Songs from '../Songs/index';
 import './styles.css'
 
  const TopNavbar = () => {
     return (
         <div>
             <Router>
-              <Navbar bg="dark" variant="dark">
+              <Navbar bg="dark" variant="dark" fixed="top">
                 <Navbar.Brand href="#home">Rubitify</Navbar.Brand>
                 <Nav className="mr-auto">
                   <Link to={"/"}>Home</Link>
@@ -22,6 +23,7 @@ import './styles.css'
                 <Route exact path="/" component={Home} />
                 <Route exact path="/artists" component={Artists} />
                 <Route path="/artists/:id/albums" component={Albums} />
+                <Route path="/albums/:id/songs" component={Songs} />
               </Switch>
             </Router>
         </div>

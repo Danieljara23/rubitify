@@ -1,0 +1,20 @@
+.songs-container{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+}
+.song-container{
+    width: 100%;
+    padding: 5px 0 5px 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+}
+.song-container p {
+    color: white;
+    font-weight: lighter;
+    font-size: 12px;
+}
