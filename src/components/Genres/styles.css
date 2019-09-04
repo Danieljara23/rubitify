@@ -1,0 +1,17 @@
+.genres-container{
+    padding-top: 70px;
+}
+.genres-list-container{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.genre-item{
+    width: 20%;
+    margin-left: 15px;
+}
+.genre-item p{
+    color:white;
+    font-size: 14px;
+    text-transform: capitalize;
+}

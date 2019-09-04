@@ -16,17 +16,19 @@ class RandomSuggest extends Component {
         console.log(this.props)
         return (
             <div>
-                <Dropdown className="custom-dropdown">
-                    <Dropdown.Toggle variant="secondary" id="dropdown-basic">
-                        Ver albums sugeridos
-                    </Dropdown.Toggle>
+                {
+                    this.props.randomAlbums.length > 0 && (<Dropdown className="custom-dropdown">
+                        <Dropdown.Toggle variant="secondary" id="dropdown-basic">
+                            Ver albums sugeridos
+                        </Dropdown.Toggle>
 
-                    <Dropdown.Menu>
-                        {this.props.randomAlbums && this.props.randomAlbums.map( item => (
-                            <Dropdown.Item key={item.id} as="div" onClick={() => this.setAlbum(item)}><Link to={`/albums/${item.id}/songs`}>{item.name}</Link></Dropdown.Item>
-                        ))}
-                    </Dropdown.Menu>
-                </Dropdown>
+                        <Dropdown.Menu>
+                            {this.props.randomAlbums && this.props.randomAlbums.map( item => (
+                                <Dropdown.Item key={item.id} as="div" onClick={() => this.setAlbum(item)}><Link to={`/albums/${item.id}/songs`}>{item.name}</Link></Dropdown.Item>
+                            ))}
+                        </Dropdown.Menu>
+                    </Dropdown>)
+                }
             </div>
         )
     }

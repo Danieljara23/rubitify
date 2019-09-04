@@ -3,6 +3,7 @@ import './styles.css'
 import { connect } from 'react-redux';
 import { fetchRandomSong } from '../../actions/songsActions';
 import { fetchGenres } from '../../actions/genresActions';
+import Button from 'react-bootstrap/Button';
 
 class Home extends Component {
 
@@ -21,9 +22,15 @@ class Home extends Component {
 
     render() {
         return (
-            <div className="home-container">
-                <button onClick={() => this.playSong()}>Let's try a song</button>
-            </div>
+            <>
+                {
+                    this.props.genres && this.props.genres.data ? (
+                    <div className="home-container">
+                        <Button variant="success" onClick={() => this.playSong()}>Let's try a song</Button>
+                    </div>
+                    ):(null)
+                }
+            </>
         )
     }
 }
