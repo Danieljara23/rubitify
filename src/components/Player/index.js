@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './styles.css'
 import { connect } from 'react-redux';
+import RandomSuggest from './randomSuggest';
 
 class Player extends Component {
     render() {
@@ -11,6 +12,7 @@ class Player extends Component {
                     <audio src={this.props.preview_url} controls autoPlay>	
                         <p>Fallback content goes here.</p>
                     </audio>
+                    <RandomSuggest/>
                 </div>
             ):(
                 <div className="player-container">

@@ -18,3 +18,18 @@
     font-weight: lighter;
     font-size: 12px;
 }
+.album-info{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 70px;
+}
+.album-image img{
+    width: 200px;
+}
+.album-data {
+    padding: 20px;
+}
+.album-data h3{
+    color: white;
+}

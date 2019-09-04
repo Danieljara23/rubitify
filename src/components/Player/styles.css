@@ -1,8 +1,39 @@
 .player-container{
     position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     bottom: 0;
     width: 100%;
     background: #343A40;
     padding-top: 5px;
     padding-bottom: 5px;
+    z-index: 2;
+}
+.custom-dropdown{
+    margin-left: 20px;
+}
+.custom-dropdown button, .custom-dropdown button:hover, .btn-secondary:not(:disabled):not(.disabled).active, .btn-secondary:not(:disabled):not(.disabled):active, .show>.btn-secondary.dropdown-toggle .custom-dropdown.show button.dropdown-toggle:focus,
+.btn-secondary:not(:disabled):not(.disabled):active:focus, .show>.btn-secondary.dropdown-toggle:focus, .btn-secondary:not(:disabled):not(.disabled).active, .btn-secondary:not(:disabled):not(.disabled):active, .show>.btn-secondary.dropdown-toggle, .btn-secondary.focus, .btn-secondary:focus {
+    background-color: #343A40;
+    border-color: #343A40;
+    box-shadow: none;
+}
+
+.dropdown-menu{
+    background-color: #343A40;
+}
+.dropdown-item {
+    padding: 0;
+}
+.dropdown-menu a {
+    color: white;
+    display: inline-block;
+    padding: .25rem 1.5rem;
+    width: 100%;
+}
+.dropdown-menu .dropdown-item:hover, .dropdown-menu .dropdown-item a:hover {
+    background-color: #25292d;
+    text-decoration: none;   
 }
