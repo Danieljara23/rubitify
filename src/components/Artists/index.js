@@ -14,7 +14,6 @@ class Artists extends Component {
         this.props.setArtist(id)
     }
     render() {
-        console.log(this.props.artists)
         const artistsItems = this.props.artists && this.props.artists.data && this.props.artists.data.map( artist => (
             <div className="album-container" key={artist.id} onClick={() =>this.onClick(artist.id)}>
                 <Link to={`/artists/${artist.id}/albums`}>

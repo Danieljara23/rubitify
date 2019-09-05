@@ -5,7 +5,6 @@ import RandomSuggest from './randomSuggest';
 
 class Player extends Component {
     render() {
-        console.log(this.props)
         return (
             this.props.preview_url ? (
                 <div className="player-container">

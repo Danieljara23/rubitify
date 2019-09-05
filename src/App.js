@@ -16,7 +16,7 @@ import Songs from './components/Songs';
 function App() {
   return (
     <Provider store={store}>
-      <div className="App">
+      <div className="App ">
         <Router>
           <TopNavbar/>
           <Player/>

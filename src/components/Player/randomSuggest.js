@@ -8,12 +8,10 @@ import { setAlbum } from '../../actions/albumsActions';
 class RandomSuggest extends Component {
 
     setAlbum(pickedAlbum){
-        console.log(pickedAlbum)
         this.props.setAlbum([pickedAlbum])
     }
 
     render() {
-        console.log(this.props)
         return (
             <div>
                 {

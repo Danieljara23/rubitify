@@ -8,7 +8,6 @@ class Songs extends Component {
     componentWillMount(){
         const { match: { params }} = this.props
         this.props.fetchSongs(params);
-        console.log("Song Props:",this.props)
         
     }
 
@@ -16,7 +15,6 @@ class Songs extends Component {
         if(nextProps.match.params.id !== this.props.match.params.id){
             const { match: { params }} = this.props
             this.props.fetchSongs(params);
-            console.log("Song Props:",this.props)
         }
     }
     
@@ -24,7 +22,6 @@ class Songs extends Component {
     }
 
     clickToPlay(preview_url){
-        console.log(preview_url)
         this.props.playSong(preview_url)
     }
 
@@ -33,14 +30,13 @@ class Songs extends Component {
             <div className="song-container" key={song.id}>
                 {
                     song.preview_url != null ? (
-                        <p onClick={()=> this.clickToPlay(song.preview_url)}>{song.name}</p>
+                        <p className="available-song" onClick={()=> this.clickToPlay(song.preview_url)}>{song.name}</p>
                     ):(
                         <p>No hay preview de la canción</p>
                     )
                 }
             </div>
         ))
-        console.log(this.props.songs)
         return (
             <>
                 {this.props.album.length > 0 && (

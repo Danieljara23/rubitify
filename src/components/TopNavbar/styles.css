@@ -2,7 +2,31 @@ nav a, nav a:hover {
     color: white;
     text-decoration: none;
 }
+.navbar-light .navbar-brand{
+    color:white;
+}
 nav a{
     margin-right: 5px;
     font-weight: lighter;
+}
+.navbar-nav a{
+    text-transform: uppercase;
+    padding-left: 15px;
+    margin: 0;
+}
+nav.navbar{
+    background: linear-gradient(180deg, #343a40, #151515);
+}
+.navbar-nav a.active:after {
+    position: absolute;
+    content: "";
+    width: 25px;
+    height: 2px;
+    background-color: #28a745;
+    bottom: 0;
+    right: calc(50% - 20px);
+}
+
+.navbar-nav a.active {
+    position: relative;
 }

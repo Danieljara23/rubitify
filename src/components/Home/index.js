@@ -12,11 +12,9 @@ class Home extends Component {
     }
 
     playSong(){
-        console.log(this.props)
         const genresArray = this.props.genres.data;
         const totalItems = genresArray.length;
         let randomIndex = Math.floor(Math.random() * totalItems)
-        console.log(randomIndex)
         this.props.fetchRandomSong(genresArray[randomIndex]);
     }
 

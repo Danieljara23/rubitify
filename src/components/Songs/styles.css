@@ -18,6 +18,9 @@
     font-weight: lighter;
     font-size: 12px;
 }
+.song-container .available-song:hover {
+    cursor: pointer;
+}
 .album-info{
     display: flex;
     flex-direction: row;

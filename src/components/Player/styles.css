@@ -37,3 +37,6 @@
     background-color: #25292d;
     text-decoration: none;   
 }
+audio:focus{
+    outline: none;
+}

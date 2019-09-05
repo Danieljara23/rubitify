@@ -11,17 +11,6 @@ class Genres extends Component {
     }
     
     render() {
-        console.log(this.props)
-        // if(this.props.genres && this.props.genres.data ){
-        //     const genresList = this.props.genres.data;
-        //     console.log("GenresList:", JSON.stringify(genresList))
-        //     let normalizedGenres = [];
-        //     // genresList.map(item => {
-        //     //     console.log(item.replace('_',' '))
-        //     //     normalizedGenres.push(item.replace('_',' '))
-        //     // })
-        //     // console.log(genresList)
-        // }
 
         return (
             <div className="genres-container">
@@ -30,7 +19,7 @@ class Genres extends Component {
                     {
                         this.props.genres && this.props.genres.data ?(
                             this.props.genres.data.map(item => 
-                                <div className="genre-item">
+                                <div className="genre-item" key={item+Math.floor(Math.random)}>
                                     <p>{item.replace('_', ' ').replace('-', ' ')}</p>
                                 </div>
                             )

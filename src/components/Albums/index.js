@@ -11,7 +11,6 @@ class Albums extends Component {
  
     componentWillMount(){
         const { match: {  params } } = this.props;
-        console.log("Params:", params)
         this.props.fetchAlbums(params);
     }
 
@@ -27,7 +26,6 @@ class Albums extends Component {
                 randomAlbums.push(randomAlbum);
             }
         }
-        console.log("Random Albums:", randomAlbums)
         this.props.setRandomAlbums(randomAlbums);
     }
 
@@ -36,7 +34,6 @@ class Albums extends Component {
             return item.id === id;
         })
         this.props.setAlbum(pickedUpAlbum)
-        console.log("Album Picked:", pickedUpAlbum);
     }
     
     render() {
@@ -50,7 +47,6 @@ class Albums extends Component {
                 </Link>
             </div>
         ))
-        console.log("Album props:", this.props.albums)
         return (
             <>
                 <div className="container top-margin">

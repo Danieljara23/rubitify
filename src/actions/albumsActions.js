@@ -1,7 +1,6 @@
 import { FETCH_ALBUMS, SET_ALBUMS, SET_ALBUM } from "./types";
 
 export const fetchAlbums = (params) => dispatch => {
-    console.log("Fetching albums...!", params.id);
     fetch(`https://rubytify.herokuapp.com/api/v1/artists/${params.id}/albums`)
     .then( res => res.json())
     .then( albums => dispatch({
