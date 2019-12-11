@@ -14,19 +14,26 @@ import Songs from './components/Songs';
 
 
 function App() {
+  const url = localStorage.getItem("url")
+
   return (
     <Provider store={store}>
       <div className="App ">
         <Router>
           <TopNavbar/>
-          <Player/>
-          <Switch>
+            <Player/>
+            <>
+            {
+              (url != "") && ( 
+              <Switch>
                 <Route exact path="/" component={Home} />
                 <Route exact path="/artists" component={Artists} />
                 <Route path="/genres" component={Genres} />
                 <Route path="/artists/:id/albums" component={Albums} />
                 <Route exact path="/albums/:id/songs" component={Songs} />
-              </Switch>
+              </Switch>)
+            }
+            </>
         </Router>
       </div>
     </Provider>
