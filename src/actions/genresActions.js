@@ -1,7 +1,8 @@
 import { FETCH_GENRES } from "./types";
 
 export const fetchGenres = () => dispatch => {
-    fetch('https://rubytify.herokuapp.com/api/v1/genres')
+    const url = localStorage.getItem("url")
+    fetch(`${url}/genres`)
     .then(res => res.json())
     .then( genres => dispatch({
         type: FETCH_GENRES,

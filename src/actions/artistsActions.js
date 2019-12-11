@@ -1,7 +1,8 @@
 import { FETCH_ARTISTS, FETCH_ARTIST } from "./types";
 
 export const  fetchArtists = () =>  dispatch => {
-    fetch('https://rubytify.herokuapp.com/api/v1/artists')      
+    const url = localStorage.getItem("url")
+    fetch(`${url}/artists`)      
     .then( res => res.json())
     .then( artists => dispatch({
         type: FETCH_ARTISTS,
